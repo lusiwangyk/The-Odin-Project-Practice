@@ -1,49 +1,34 @@
 
-function deleteRow(r) {
-    var result = confirm("Are you sure to delete this book?");
-    if (result) {
-        var i = r.parentNode.parentNode.rowIndex;
-        document.getElementById("mytable").deleteRow(i);
-    }
-}
+$(document).ready(function(){
+    $(".delete").click(function(){
+        $("table tbody").find('input[name="record"]').each(function(){
+            if($(this).is(":checked")) {
+                $(this).parents("tr").remove();
+            }
+        })
+    });
 
-var color = $(".status").css("background-color");
-
-$(document).ready(function() {
-    $(".status").click(function() {
-
-        if(color === "#FFD700") {
-            $(this).css("background-color","#008000");
+    $(".readcheck").click(function(){
+        if($(this).prop("checked") == true) {
+            $(this).siblings().css("background-color","green");
+            $(this).siblings().html("Read");
         }
-        else if (color === "#008000") {
-            $(this).css("background-color","#FFD700");
-            console.log(color);
-        }       
-    })
-    
-}) 
+        else if ($(this).prop("checked") == false) {
+            $(this).siblings().css("background-color","red");
+            $(this).siblings().html("Not Read");
+        }
+    });
 
-var table = getElementById("mytable");
-var i = 1 ;
+    $("#addrow").click(function(){
+        var genre = $("#genre").val();
+        var bookTitle = $("#title").val();
+        var bookAuthor = $("#author").val();
+        var pageNum = $("#pages").val();
+        var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + genre +"</td><td>" + bookTitle + "</td><td>" + bookAuthor + "</td><td>" + pageNum + "</td></tr>";
+        $("table tbody").append(markup);
+    });
 
-function addNewRow() {
-    i++;
-    var newRow = table.insertRow(i);
-    var cell1 = newRow.insertCell(0);
-    var cell2 = newRow.insertCell(1);
-    var cell3 = newRow.insertCell(2);
-    var cell4 = newRow.insertCell(3);
-    var cell5 = newRow.insertCell(4);
-    var cell6 = newRow.insertCell(5);
-    var cell7 = newRow.insertCell(6);
+})
 
-    cell1.innerHTML = "#" + i;
-    cell2.innerHTML = getElementById("genre").value;
-    cell3.innerHTML = getElementById("title").value;
-    cell4.innerHTML = getElementById("author").value;
-    cell5.innerHTML = getElementById("pages").value;
-    cell6.innerHTML = "Button";
-    cell7.innerHTML = "Delete";
 
-}
 

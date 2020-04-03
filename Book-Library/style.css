@@ -21,7 +21,7 @@ table {
 
 tr {
     height:20px;
-    border:1px solid  #008B8B;
+    border:1px solid #008B8B;
 }
 
 .header {
@@ -42,22 +42,32 @@ form {
 }
 
 .status {
-    border-radius: 50%;
-    height:30px;
-    width:30px;
-    background-color:#FFD700;
+    color:white;
+    font-style:bold;
+    background-color:green;
 }
+
+
 .delete {
-    border-radius:50%;
-    height:20px;
-    width:20px;
-    background-color:red;
+    background-color:grey;
+    height:30px;
+    color:white;
     font-style:bold;
 }
-.button {
+
+#addbutton {
     font-size:15px;
     font-style:bold;
     background-color:#FF4500;
     color:white;
-    
+}
+
+.newline {
+    text-align:center;
+    background-color:pink;
+    margin-left:10%;
+    margin-right:10%;
+    padding:20px;
+    font-family:'Roboto Condensed', sans-serif;
+
 }

@@ -15,47 +15,57 @@
     <main class="container">
         <h1>Welcome to my library!</h1>
         <table id="mytable">
-            <tr class="header">
-                <th>No.</th>
-                <th>Genre</th>
-                <th>Book Title</th>
-                <th>Author</th>
-                <th>Pages</th>
-                <th>Status</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>#01</td>
-                <td>Kids</td>
-                <td>Winnie The Pooh</td>
-                <td>A.A.Milne</td>
-                <td>145</td>
-                <td><button class="status"></button></td>
-                <td><button class="delete" onclick="deleteRow(this)">X</button></td>
-            </tr>
-            <tr>
-                <td>#02</td>
-                <td>Mystery</td>
-                <td>Bound for Murder</td>
-                <td>Laura Childs</td>
-                <td>237</td>
-                <td><button class="status"></button></td>
-                <td><button class="delete" onclick="deleteRow(this)">X</button></td>
-            </tr>
+            <thead>
+                <tr class="header">
+                    <th>Status</th>
+                    <th>Genre</th>
+                    <th>Book Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Read Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="deletecheck" name="record"></td>
+                    <td>Kids</td>
+                    <td>Winnie The Pooh</td>
+                    <td>A.A.Milne</td>
+                    <td>145</td>
+                    <td><button class="status">Read</button><input type="checkbox" class="readcheck" checked></td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="deletecheck"  name="record"></td>
+                    <td>Mystery</td>
+                    <td>Bound for Murder</td>
+                    <td>Laura Childs</td>
+                    <td>237</td>
+                    <td><button class="status">Read</button><input type="checkbox" class="readcheck" checked></td>
+                    
+                </tr>
+            </tbody>           
         </table>
-        <br />
+        <br />  
+        <button class="delete">Delete Row</button>
+        <br />    
+    </main>
+    <div class="newline">
         <form>
             <label>Genre</label>
-            <input type="text" placeholder="Mystery" id="genre">
+            <input id="genre" type="text" placeholder="Mystery">
             <label>Book Title</label>
-            <input type="text" placeholder="Moby Dick" id="title">
+            <input id="title" type="text" placeholder="Moby Dick" >
             <label>Author</label>
-            <input type="text" placeholder="Stephen King" id="author">
+            <input id="author" type="text" placeholder="Stephen King" >
             <label>Pages</label>
-            <input type="number" placeholder="230" id="pages">
-            <input class="button" type="submit" id="addbutton" value="Add New Book" onclick="addNewRow()">
+            <input id="pages" type="number" placeholder="230" >
+            <label>Read</label>
+            <input type="checkbox" id="statuscheck">
+            <input type="submit" id="addrow" value="Add New Book">
         </form>
-    </main>
+
+    </div>
     
 
     
