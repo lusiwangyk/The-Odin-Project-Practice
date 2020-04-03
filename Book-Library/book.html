@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <script
+    src="http://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Welcome to my library!</h1>
+        <table id="mytable">
+            <tr class="header">
+                <th>No.</th>
+                <th>Genre</th>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>#01</td>
+                <td>Kids</td>
+                <td>Winnie The Pooh</td>
+                <td>A.A.Milne</td>
+                <td>145</td>
+                <td><button class="status"></button></td>
+                <td><button class="delete" onclick="deleteRow(this)">X</button></td>
+            </tr>
+            <tr>
+                <td>#02</td>
+                <td>Mystery</td>
+                <td>Bound for Murder</td>
+                <td>Laura Childs</td>
+                <td>237</td>
+                <td><button class="status"></button></td>
+                <td><button class="delete" onclick="deleteRow(this)">X</button></td>
+            </tr>
+        </table>
+        <br />
+        <form>
+            <label>Genre</label>
+            <input type="text" placeholder="Mystery" id="genre">
+            <label>Book Title</label>
+            <input type="text" placeholder="Moby Dick" id="title">
+            <label>Author</label>
+            <input type="text" placeholder="Stephen King" id="author">
+            <label>Pages</label>
+            <input type="number" placeholder="230" id="pages">
+            <input class="button" type="submit" id="addbutton" value="Add New Book" onclick="addNewRow()">
+        </form>
+    </main>
+    
+
+    
+    <script src="book-library.js"></script>
+    
+</body>
+</html>
